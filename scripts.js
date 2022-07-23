@@ -1,3 +1,6 @@
+
+
+
 function openModal(mn) {
     let modal = document.getElementById(mn);
     if (typeof modal == 'undefined' || modal === null)
@@ -12,6 +15,7 @@ function closeModal(mn) {
         return;
     modal.style.display = 'none';
 }
+//
 let operacao = 'A';
 let usuarios;
 let resultSorteio = [];
@@ -22,6 +26,7 @@ if (localStorage.getItem('usuarios')) {
 else {
     usuarios = [];
 }
+//
 function numpar(e) {
     if (e % 2 == 0) {
 
@@ -31,7 +36,7 @@ function numpar(e) {
         return false;
     }
 }
-
+//
 let indice_selecionado = -1;
 const frmCadastro = document.getElementById('frmCadastro');
 
@@ -45,7 +50,7 @@ function add() {
     }
 
 }
-
+//
 function Adicionar() {
     let usuario = {
         nome: document.querySelector('#txtNome').value,
