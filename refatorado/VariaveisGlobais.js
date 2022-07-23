@@ -8,10 +8,10 @@ function userVariavel() {
 }
 function usuariosVariavel(){
     if (localStorage.getItem('usuarios')) {
-        usuarios = JSON.parse(localStorage.getItem('usuarios'))
+      return usuarios = JSON.parse(localStorage.getItem('usuarios'))
     }
     else {
-        usuarios = [];
+      return usuarios = [];
     }
 }
 let resultSorteio = [];

@@ -8,12 +8,14 @@ function openModal(mn) {
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
     mailValidation.innerText = '';
+    console.log('openModal')
 }
 function closeModal(mn) {
     let modal = document.getElementById(mn);
     if (typeof modal == 'undefined' || modal === null)
         return;
     modal.style.display = 'none';
+    console.log('closeModal')
 }
 //
 let operacao = 'A';
@@ -66,10 +68,12 @@ function Adicionar() {
         openModal('cadastro-modal')
         return true;
     }
+    console.log('Adicionar')
 }
 function cleantext() {
     document.querySelector("#txtNome").value = '';
     document.querySelector("#txtEmail").value = '';
+    console.log('ct')
 }
 
 function handleEditar(e) {
@@ -84,7 +88,7 @@ function handleEditar(e) {
     if (typeof modal == 'undefined' || modal === null)
         return;
     modal.style.display = 'none';
-
+    console.log('handleEditar')
 }
 
 function Editar() {
@@ -100,7 +104,7 @@ function Editar() {
     alert('Usuario atualizado');
     operacao = 'A';
     closeModal('cadastrados-modal');
-
+    console.log('Editar')
 }
 
 
@@ -126,6 +130,7 @@ function listar() {
 }
 document.querySelector('#modal-cadastrados').addEventListener('click', function (e) {
     listar();
+    console.log('listar')
 })
 
 function deletar(indice) {
@@ -135,12 +140,14 @@ function deletar(indice) {
         return;
     }
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    console.log('deletar')
 }
 
 function handleDeletar(e) {
     let indice_selecionado = parseInt(e.getAttribute("alt"));
     deletar(indice_selecionado);
     listar();
+    console.log('handleDeletar')
 }
 
 function sorteio() {
@@ -176,6 +183,7 @@ function sorteio() {
     sbody.innerHTML += slinhas;
     openModal('resultado-modal')
     resultSorteio = [];
+    console.log('sorteio')
 }
 
 document.querySelector('#btnSortear').addEventListener('click', function (e) {
@@ -193,6 +201,7 @@ function reset() {
     let tbody = document.querySelector('#tblListar tbody');
     tbody.innerHTML = ``;
     usuarios = [];
+    console.log('reset')
 }
 var mailValidation = document.getElementById('mail-validation');
 let nome = document.getElementById('txtNome');

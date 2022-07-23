@@ -1,6 +1,7 @@
 function listar(){
+    console.log('listar')
     let tbody = document.querySelector('#tblListar tbody');
-    users = localStorageGetItemUser()
-    let linhas = writeTBodyHTML()
+    let users = localStorageGetItemUser()
+    let linhas = writeTBodyHTML(users)
     tbody.innerHTML = linhas
 }

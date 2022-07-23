@@ -2,15 +2,17 @@ function sorteio() {
     usuarios = localStorageGetItemUser()
     let max = usuarios.length
     let resultado = []
+    let resultSorteio = getUserSorteio()
+    console.log(resultSorteio)
     let sbody = document.querySelector('.modal-body-resultado');
     let slinhas = '';
-    validacaoSorteio(max)
+    if (validacaoSorteio(max)){
+        return
+    }
+    resultado = resultadoFunction(resultado,max)
     openModal('resultado-modal')
-    let num = generateNumber()
-    numeroExistente(resultado,num,max)
-    sorteioHTML(slinhas,sbody)
+    sorteioHTML(slinhas,sbody,resultSorteio,resultado)
     openModal('resultado-modal')
-    resultSorteio = [];
 }
 document.querySelector('#btnSortear').addEventListener('click', function (e) {
     sorteio()

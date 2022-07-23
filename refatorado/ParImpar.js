@@ -1,4 +1,4 @@
-function ParOuImpar(num) {
+function numpar(num) {
     if (num % 2 == 0) {
 
         return true;

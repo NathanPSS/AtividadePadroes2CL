@@ -1,0 +1,3 @@
+function getUserSorteio() {
+  return resultSorteio
+}

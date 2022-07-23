@@ -1,11 +1,8 @@
-function numeroExistente(resultado,num,max) {
-
-for (let i = 0; i < max; i++) {
+function numeroExistente(resultado,num) {
     if (resultado.includes(num)) {
-        i--;
+        return true
     }
     else {
-        resultado.push(num);
+        return false
     }
-}
 }
